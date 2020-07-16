@@ -26,7 +26,6 @@ android_app {
 // NCI Configuration
 android_app {
     name: "NfcNci",
-    overrides: ["Nfc"],
     srcs: [
         "src/**/*.java",
         "nci/**/*.java",
