@@ -2354,6 +2354,13 @@ static void com_android_nfc_NfcManager_doShutdown(JNIEnv*, jobject)
 {
 }
 
+static jstring com_android_nfc_NfcManager_doGetNfaStorageDir(JNIEnv* e, jobject)
+{
+    const char* path = "/data/nfc";
+    return e->NewStringUTF(path);
+}
+
+
 /*
  * JNI registration.
  */
@@ -2428,7 +2435,9 @@ static JNINativeMethod gMethods[] =
    {"doFactoryReset", "()V",
       (void *)com_android_nfc_NfcManager_doFactoryReset},
    {"doShutdown", "()V",
-      (void *)com_android_nfc_NfcManager_doShutdown}
+      (void *)com_android_nfc_NfcManager_doShutdown},
+   {"getNfaStorageDir", "()Ljava/lang/String;",
+      (void*)com_android_nfc_NfcManager_doGetNfaStorageDir}
 };
 
 

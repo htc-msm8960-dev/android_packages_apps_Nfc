@@ -154,6 +154,9 @@ public class NativeNfcManager implements DeviceHost {
         doShutdown();
     }
 
+    @Override
+    public native String getNfaStorageDir();
+
     private native boolean doDeinitialize();
 
     @Override
